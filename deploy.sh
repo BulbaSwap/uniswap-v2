@@ -22,7 +22,7 @@ INIT_HASH_VALUE=$(echo "$INIT_HASH_OUTPUT" | sed 's/^0x//')
 echo "INIT_HASH_OUTPUT: $INIT_HASH_OUTPUT"
 
 # replace init hash in library
-sed -i "s/hex'70bcf9e2fa6f691fe59a2714d8ff7c6987ed70844ce18b7a15093b03c70a7514'/hex'$INIT_HASH_VALUE'/" contracts/v2-periphery/contracts/libraries/UniswapV2Library.sol 
+sed -i '' "s/hex'[0-9a-fA-F]\{64\}'/hex'$INIT_HASH_VALUE'/" contracts/v2-periphery/contracts/libraries/UniswapV2Library.sol
 
 echo "Deploying Router"
 echo "Factory: $FACTORY_ADDRESS"
